@@ -12,3 +12,9 @@ resource "azurerm_network_interface" "Flipkart-nic" {
   }
 depends_on=[azurem_subnet.appsubnet]
 }
+output"appsubnet-id{
+value=azurerm_subnet.appsubnet.id
+
+
+terraform plan --outmain.ifplan
+terraform apply main.tfplan
