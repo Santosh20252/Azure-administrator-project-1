@@ -9,6 +9,7 @@ resource "azurerm_network_interface" "Flipkart-nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.app-subnet.id
     private_ip_address_allocation = "Dynamic"
+    public_id_address_id          =  "azurerm_public_id.flipkart-pip.id
   }
 depends_on=[azurem_subnet.appsubnet]
 }
