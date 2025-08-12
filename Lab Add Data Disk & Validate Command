@@ -18,3 +18,5 @@ resource "azurerm_virtual_machine_data_disk_attachment" "flipkartdisklink" {
   lun                = "0"
   caching            = "ReadWrite"
 }
+
+terraform validate
