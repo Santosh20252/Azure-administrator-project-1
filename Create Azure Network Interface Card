@@ -1,0 +1,14 @@
+Create Azure Network Interface Card
+
+resource "azurerm_network_interface" "Flipkart-nic" {
+  name                = "Flipkart-NIC2025"
+  location            = central india
+  resource_group_name = flipkart-RG-CI
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = azurerm_subnet.app-subnet.id
+    private_ip_address_allocation = "Dynamic"
+  }
+depends_on=[azurem_subnet.appsubnet]
+}
