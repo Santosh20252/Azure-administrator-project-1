@@ -21,4 +21,5 @@ resource "azurerm_windows_virtual_machine" "Win-VM" {
     sku       = "2016-Datacenter"
     version   = "latest"
   }
+depends_on=[azurerm_network_interface.Flipkart-nic,azurerm_resource_group.flipkart-RG_CI.]
 }
