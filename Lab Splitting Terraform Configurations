@@ -12,3 +12,5 @@ features {}
 
 
 }
+provide.tf
+local.tf
