@@ -19,4 +19,8 @@ resource "azurerm_network_security_group" "flipkart-NSG" {
 depens_on= [azurerm_resourc_group.flipkart-RG-CI]
   
   }
+
+resource "azurerm_subnet_network_security_group_association" "NSGlink" {
+  subnet_id                 = azurerm_subnet.appsubnet.id
+  network_security_group_id = azurerm_network_security_group.flipkart-nsg.id
 }
