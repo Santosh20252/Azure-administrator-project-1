@@ -8,6 +8,13 @@ resource "azurerm_managed_disk" "flipkartdisk01" {
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
   disk_size_gb         = "4"
+depends_on= [azurerm_resource_group" "Flipkart-RG-Project]
 
   }
 
+resource "azurerm_virtual_machine_data_disk_attachment" "flipkartdisklink" {
+  managed_disk_id    = azurerm_managed_disk.flipkartdisk01.id
+  virtual_machine_id = azurerm_virtual_machine.win-vm.id
+  lun                = "0"
+  caching            = "ReadWrite"
+}
