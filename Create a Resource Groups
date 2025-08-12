@@ -1,0 +1,5 @@
+Create a Resource Groups
+resource "azurerm_resource_group" "HDFC-Project2025" {
+  name     = "HDFC_RG"
+  location = "Central india"
+}
