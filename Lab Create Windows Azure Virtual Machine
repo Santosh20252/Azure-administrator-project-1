@@ -1,1 +1,24 @@
 Lab Create Windows Azure Virtual Machine
+resource "azurerm_windows_virtual_machine" "Win-VM" {
+  name                = "flipkart-VM01"
+  resource_group_name = flipkart-RG-CI
+  location            = central india 
+  size                = "Standard_B2s"
+  admin_username      = "flipkartuser"
+  admin_password      = "India@2025!"
+  network_interface_ids = [
+    azurerm_network_interface.example.id,
+  ]
+
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+
+  source_image_reference {
+    publisher = "MicrosoftWindowsServer"
+    offer     = "WindowsServer"
+    sku       = "2016-Datacenter"
+    version   = "latest"
+  }
+}
