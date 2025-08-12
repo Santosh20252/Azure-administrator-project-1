@@ -1,0 +1,22 @@
+Create Azure Virtual Network
+
+resource "azurerm_virtual_network" "Flipkart-Vnet" {
+  name                = "Flipkart-Vnet01"
+  location            = central india
+  resource_group_name = Flipkart-RG-CI
+  address_space       = ["20.20.0.0/16"]
+ 
+
+  subnet {
+    name             = "app-subnet"
+    address_prefixes = ["10.0.1.0/24"]
+  }
+
+  subnet {
+    name             = "db-subnet"
+    address_prefixes = ["10.0.2.0/24"]
+   
+
+  depend_on=[azurerm_resource_group.flipkart-RG-CI]
+  }
+}
