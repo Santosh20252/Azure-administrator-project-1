@@ -1,5 +1,5 @@
 Create a Resource Groups
-resource "azurerm_resource_group" "HDFC-Project2025" {
-  name     = "HDFC_RG"
+resource "azurerm_resource_group" "Flipkart-RG-Project" {
+  name     = "Flipkart-RG-CI"
   location = "Central india"
 }
