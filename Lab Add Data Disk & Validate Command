@@ -1,1 +1,13 @@
 Lab Add Data Disk & Validate Command
+
+
+resource "azurerm_managed_disk" "flipkartdisk01" {
+  name                 = "flipkartdisk2025"
+  location             = centralindia
+  resource_group_name  = flipkart-RG-CI
+  storage_account_type = "Standard_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = "4"
+
+  }
+
